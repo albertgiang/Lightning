@@ -6,7 +6,8 @@ void setup(){
 }
 
 void draw(){
-	randomWalk(x,y);
+  randomWalk(x,y);
+  ellipse(150, 150, 30, 30);
 }
 
 void mousePressed(){
@@ -14,11 +15,33 @@ void mousePressed(){
 }
 
 void randomWalk(int x,int y){
-	int newX = x + (int)(Math.random()*11);
-	int newY = y + (int)(Math.random()*11);
+  int newX;
+  int newY;
+  boolean addOrSubtractX = addOrSubtract();
+  boolean addOrSubtractY = addOrSubtract();
+  
+  if(addOrSubtractX == true){
+      newX = x + (int)(Math.random()*100);
+    } else {
+      newX = x - (int)(Math.random()*100);
+    }
+    
+   if(addOrSubtractY == true){
+      newY = y + (int)(Math.random()*100);
+    } else {
+      newY = y - (int)(Math.random()*100);
+    }
 
-	line(x, y, newX, newY);
+  line(x, y, newX, newY);
 }
 
-
+boolean addOrSubtract(){
+  boolean result;
+  int addOrSubtract = (int)(Math.random()*2);
+  if (addOrSubtract == 0){
+    return result = true;
+  } else {
+    return result = false;
+  }
+}
 
