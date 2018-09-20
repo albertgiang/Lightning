@@ -23,7 +23,7 @@ void randomWalk(int x,int y){
   if(addOrSubtractX == true){
       newX = x + (int)(Math.random()*100);
     } else {
-      newX = x - (int)(Math.random()*100);
+      newX = x - (int)(Math.random()*100); 
     }
     
    if(addOrSubtractY == true){
@@ -32,7 +32,11 @@ void randomWalk(int x,int y){
       newY = y - (int)(Math.random()*100);
     }
 
-  line(x, y, newX, newY);
+if(newX > 0 || newY < 301){
+    line(x, y, newX, newY);
+    x = newX;
+    y = newY;
+  }
 }
 
 boolean addOrSubtract(){
@@ -44,4 +48,3 @@ boolean addOrSubtract(){
     return result = false;
   }
 }
-
